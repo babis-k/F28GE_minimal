@@ -1,0 +1,21 @@
+{
+  "name" : "f28ge",
+  "version-string" : "1.0.0",
+  "builtin-baseline" : "940f58770cee8e2011bfb4847fb2bd70057301a8",
+  "dependencies" : [ {
+    "name" : "sfml",
+    "version>=" : "3.0.2"
+  }, {
+    "name" : "imgui-sfml",
+    "version>=" : "3.0#3"
+  }, {
+    "name" : "glm",
+    "version>=" : "1.0.3"
+  }, {
+    "name" : "rapidcsv",
+    "version>=" : "8.92"
+  }, {
+    "name" : "palsigslot",
+    "version>=" : "1.2.3"
+  } ]
+}
