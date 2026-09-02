@@ -30,7 +30,7 @@ function(copy_media TARGET_NAME)
             VERBATIM
         )
     else()
-        message(STATUS "copy_media: No media directory found at ${MEDIA_SOURCE_DIR}, skipping copy.")
+        message(STATUS "copy_media: No media directory found at ${CMAKE_CURRENT_SOURCE_DIR}, skipping copy.")
     endif ()
 endfunction()
 
