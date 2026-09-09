@@ -8,6 +8,7 @@ endif()
 project(F28GE)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++")
 find_package(SFML COMPONENTS Network Graphics Window Audio System CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
 find_package(rapidcsv CONFIG REQUIRED)
