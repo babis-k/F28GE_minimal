@@ -8,7 +8,7 @@ endif()
 project(F28GE)
 
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libgcc -static-libstdc++")
 find_package(SFML COMPONENTS Network Graphics Window Audio System CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
 find_package(rapidcsv CONFIG REQUIRED)
@@ -33,6 +33,17 @@ function(copy_media TARGET_NAME)
     else()
         message(STATUS "copy_media: No media directory found at ${CMAKE_CURRENT_SOURCE_DIR}, skipping copy.")
     endif ()
+
+    if(WIN32)
+        add_custom_command(
+                TARGET ${TARGET_NAME} POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E copy_directory
+                "${CMAKE_SOURCE_DIR}/external/mingw-win-dll"
+                "${CMAKE_CURRENT_BINARY_DIR}"
+                COMMENT "Copying directory contents from ${CMAKE_CURRENT_SOURCE_DIR}/media to ${CMAKE_CURRENT_BINARY_DIR}/media"
+                VERBATIM
+        )
+    endif()
 endfunction()
 
 add_subdirectory(projects/CommonGameCode)
