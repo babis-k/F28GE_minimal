@@ -11,14 +11,14 @@
 
 * (**Mac users only**) From a terminal, run ```brew install pkg-config```
   * Do not forget to add path as instructed when installing brew - pay attention to "**==> Next steps:** Run these commands..."
-* Clone or download/unzip repository. Do **NOT** place it in a network folder, Dropbox, OneDrive, Google Drive, etc
+* Clone or download/unzip repository. Do **NOT** place it in a network folder, Dropbox, OneDrive, Google Drive, etc. Also do **NOT** place it in a path that contains spaces.
 * In CLion, click "Open" and select the repository folder. Make sure you "Trust the project folders"
 * In the project wizard click 'Skip Wizard and Use Defaults' - you don't need to change anything here
 * When the project opens, you might notice red fonts indicate an error when loading the project, regarding not finding a package configuration file provided by SFML. **This is normal**. We need to proceed to the next steps to make the error go away
 * There's a burger menu on the top left, which expands to a typical application menu, with top-level entries like "File", "View", etc
   * (**Mac users only**) You might not see a burger menu, as in typical Mac fashion the application menu could already be at the top of the screen 
 * Go to View -> Tool Windows -> Vcpkg
-* At the bottom left in the new Vcpkg window, click "+", ensure both checkboxes are selected, and click OK
+* At the bottom left in the new Vcpkg window, click "+", ensure both checkboxes are selected, ensure that the vcpkg path does **NOT** contain spaces, and click OK.
 * In the "Project" view, right-click the folder root, and select "Reload CMake Project"
 * By now everything should be ok, and the different build targets should appear on the top middle-right of the screen, on the right of the active configuration, which should be "Debug"
 
